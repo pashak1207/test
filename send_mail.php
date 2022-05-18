@@ -23,7 +23,7 @@
 	$body = str_replace('%phone%', $phone, $body);
 	$body = str_replace('%message%', $message, $body);
 
-    $mail->addAddress("pashak12072002@gmail.com");   // Здесь введите Email, куда отправлять
+    $mail->addAddress("samiv85951@dufeed.com");   // Здесь введите Email, куда отправлять
 	$mail->setFrom($email);
     $mail->Subject = "[Заявка с формы]";
     $mail->MsgHTML($body);
