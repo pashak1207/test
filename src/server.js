@@ -10,7 +10,7 @@ app.use(express.json())
 
 app.post('/', (req, res) => {
     try {
-        console.log(req.body.location)
+        console.log(req.body)
         res.json({
             message: "success"
         })
