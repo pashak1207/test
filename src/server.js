@@ -8,7 +8,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
     try {
         console.log(req.body.location)
     }catch (err){
