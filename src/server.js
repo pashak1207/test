@@ -10,8 +10,7 @@ app.use(express.json())
 
 app.get('/', (req, res) => {
     try {
-        console.log("success")
-        res.send("Hello")
+        console.log(req.body.location)
     }catch (err){
         console.log(err)
     }
@@ -21,6 +20,5 @@ app.listen(PORT, (err) => {
     if (err){
         return console.log("Error: ", err)
     }
-
     return "Server OK"
 })
