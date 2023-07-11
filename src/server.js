@@ -11,8 +11,14 @@ app.use(express.json())
 app.post('/', (req, res) => {
     try {
         console.log(req.body.location)
+        res.json({
+            message: "success"
+        })
     }catch (err){
         console.log(err)
+        res.status(500).json({
+            message: "error"
+        })
     }
 });
 
