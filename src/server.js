@@ -1,12 +1,26 @@
-const http = require("http");
+const express = require('express');
+const cors = require('cors');
 
-const port = process.env.PORT || 5000;
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World');
+const PORT = process.env.PORT || 5000;
+
+const app = express()
+
+app.use(cors())
+app.use(express.json())
+
+app.get('/', (req, res) => {
+    try {
+        console.log("success")
+        res.send("Hello")
+    }catch (err){
+        console.log(err)
+    }
 });
 
-server.listen(port, () => {
-    console.log(`Started on port: ${port}`)
+app.listen(PORT, (err) => {
+    if (err){
+        return console.log("Error: ", err)
+    }
+
+    return "Server OK"
 })
